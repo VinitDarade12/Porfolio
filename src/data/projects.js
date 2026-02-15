@@ -38,6 +38,7 @@ export const projects = [
       github: "https://github.com/VinitDarade12/Car-Price-Prediction-App-",
       local: "http://localhost:8507",
     },
+  },
   {
     id: 5,
     title: "Student Assessment and Performance Tracker (SAPT)",
