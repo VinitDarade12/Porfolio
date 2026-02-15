@@ -1,0 +1,158 @@
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f0f;
+  --bg-card: #141414;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-primary: #6366f1;
+  /* Indigo 500 */
+  --accent-secondary: #8b5cf6;
+  /* Violet 500 */
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --border-color: #27272a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+/* Stars Background */
+.stars-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 25% 15%, white, transparent),
+    radial-gradient(1px 1px at 50% 35%, white, transparent),
+    radial-gradient(1px 1px at 75% 55%, white, transparent),
+    radial-gradient(2px 2px at 10% 80%, white, transparent),
+    radial-gradient(2px 2px at 80% 10%, white, transparent);
+  background-size: 550px 550px;
+  animation: starsMove 100s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes starsMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accent-gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) minmax(300px, 0.8fr);
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+}
